@@ -43,11 +43,6 @@ A clean, responsive Data Entry Web App built with Next.js, Tailwind CSS, and loc
 - **Location**: `data/data_entry.db` (auto-created on first run).
 - **No external accounts, Docker, or manual database setup needed.**
 
----
 
-## ⚙️ Configuration (`.env.local`)
 
-```env
-ADMIN_PASSWORD=admin123
-ADMIN_SESSION_SECRET=super_secret_session_key_data_entry_app
-```
+
