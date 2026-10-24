@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Data Entry Web App
 
-## Getting Started
+A clean, responsive Data Entry Web App built with Next.js, Tailwind CSS, and local persistent SQLite database storage (zero manual configuration required).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Quick Start
+
+1. **Install dependencies** (already installed):
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. Open **[http://localhost:3000](http://localhost:3000)** (or the port shown in terminal).
+
+---
+
+## 📋 Pages & Usage
+
+- **Public Data Entry Form**: `/`
+  - Submit `Name`, `Email`, `Phone Number`, and `Details & Notes`.
+  - Client and server-side validation.
+  - Submissions are persistently saved directly into the local SQLite database.
+
+- **Admin Dashboard**: `/admin`
+  - Protected with server-side authentication (signed HttpOnly cookies).
+  - **Default Password**: `admin123` *(customizable via `.env.local`)*.
+  - Live search across all fields (Name, Email, Phone, Details).
+  - View full notes modal.
+  - Delete records with confirmation.
+  - Export filtered records to CSV.
+
+---
+
+## 🗄️ Database (Zero Manual Setup)
+
+- **Database**: SQLite (`better-sqlite3`).
+- **Location**: `data/data_entry.db` (auto-created on first run).
+- **No external accounts, Docker, or manual database setup needed.**
+
+---
+
+## ⚙️ Configuration (`.env.local`)
+
+```env
+ADMIN_PASSWORD=admin123
+ADMIN_SESSION_SECRET=super_secret_session_key_data_entry_app
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
